@@ -58,13 +58,13 @@ extension String.StringInterpolation {
     
     private func composeArrayElement(_ array: Array<JsonParsable>, count : Int) ->[String]{
         var elementList = [String]()
-        for element in array {
+        for (index, element) in array.enumerated() {
             if element is JsonObject {
                 elementList.append("\(element, count: count+1)")
                 continue
             }
             if element is Array<JsonParsable>{
-                if count == 1{
+                if count == 1 && index == 0 {
                     elementList.append("\n\t\(element, count: count+1)")
                 }else {
                     elementList.append("\(element, count: count)")
