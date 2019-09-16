@@ -32,7 +32,7 @@ struct JsonObject : JsonParsable {
         get {
             var elements = [String]()
             var results = [String]()
-            let sortedKeyValueSet = keyValueSet.enumerated().sorted(by: { ( pair1, pair2) -> Bool in
+            let sortedKeyValueSet = keyValuesSet.enumerated().sorted(by: { ( pair1, pair2) -> Bool in
                 return pair1.element.key < pair2.element.key
             })
             results.append("\(TokenSplitSign.curlyBracketStart.description)")

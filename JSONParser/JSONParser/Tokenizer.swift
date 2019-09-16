@@ -23,7 +23,7 @@ struct Tokenizer {
         result = tokenizeWithCurlyBrackets(result)
         result = tokenizeWithSemicolon(result)
         tokenList = result.components(separatedBy: ["^", "$", "&", "@", "#"]).filter{!$0.isEmpty}
-        
+
         return tokenList
     }
     
